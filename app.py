@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from skyfield.api import load, Topos, utc
 from datetime import datetime
 import math
 from geopy.geocoders import Nominatim
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/moonphase', methods=['GET'])
 def moon_phase():
